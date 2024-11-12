@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTakToe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <Header>
+        <h1>TikTakToe</h1>
+    </Header>
+    <main>
+        <div class="main">
+            <!-- show the turn is of x or 0 -->
+            <div id="turn">Turn: 0</div> 
+            <!-- places to play -->
+            <button class="play" onclick="play(0)"></button>
+            <button class="play" onclick="play(1)"></button>
+            <button class="play" onclick="play(2)"></button>
+            <button class="play" onclick="play(3)"></button>
+            <button class="play" onclick="play(4)"></button>
+            <button class="play" onclick="play(5)"></button>
+            <button class="play" onclick="play(6)"></button>
+            <button class="play" onclick="play(7)"></button>
+            <button class="play" onclick="play(8)"></button>
+        </div>
+
+        <!-- lines to show the winner -->
+        <div class="winline" id="abc"></div>
+        <div class="winline" id="def"></div>
+        <div class="winline" id="ghi"></div>
+        <div class="winline" id="adg"></div>
+        <div class="winline" id="beh"></div>
+        <div class="winline" id="cfi"></div>
+        <div class="winline" id="aei"></div>
+        <div class="winline" id="ceg"></div>
+    </main>
+    <footer>
+        <div>
+            <!-- button for resetting the match -->
+            <button class="reset" onclick="reset()">Reset</button>
+        </div>
+    </footer>
+        <div class="result">
+            <div class="title"><h1>Winner</h1></div>
+            <div>
+                <!-- show who won the match -->
+                <div id="result"></div>
+            </div>
+        </div>
+        <!-- history of previous wins -->
+        <div class="history">
+            <div class="title"><h1>History of Winner</h1><button class="resetscore" onclick="resetscore()">Reset score</button></div>
+            <div id="history">
+            </div>
+            <div class="total">
+                <div id="win0">0: 0</div>
+                <div id="winx">X: 0</div>
+            </div>
+        </div>
+</body>
+</html>
