@@ -4,7 +4,7 @@ var p = document.getElementsByClassName("play"); // Places to put 0 or X
 var turn = true; // True means turn of '0', false means turn of 'X'
 var playable = true; // Indicates if the match is still playable
 
-// Function to handle a player's move
+// handle click on a cell
 function play(no) {
     if (p[no].innerHTML == "" && playable) {
         p[no].innerHTML = turn ? "0" : "X";
@@ -14,7 +14,7 @@ function play(no) {
     }
 }
 
-// Function to reset the board
+// reset the board
 function reset() {
     document.getElementById("result").innerHTML = "";
     for (var i = 0; i < 9; i++) p[i].innerHTML = "";
@@ -25,7 +25,7 @@ function reset() {
     setturn();
 }
 
-// Function to check win conditions
+// check winner
 function wincheck() {
     var winningPatterns = [
         [0, 1, 2, "abc"], [3, 4, 5, "def"], [6, 7, 8, "ghi"], // Rows
@@ -49,7 +49,7 @@ function wincheck() {
         }
     }
 
-    // Check for a draw (if all cells are filled and no winner)
+    // Check for draw
     if ([...p].every(cell => cell.innerHTML !== "")) {
         document.getElementById("result").innerHTML = "Draw!";
         document.getElementById("history").innerHTML = "Draw<br>" + document.getElementById("history").innerHTML;
@@ -57,18 +57,18 @@ function wincheck() {
     }
 }
 
-// Function to update turn display
+// show whose turn it is
 function setturn() {
     document.getElementById("turn").innerHTML = "Turn: " + (turn ? "0" : "X");
 }
 
-// Function to update total scores
+// update scores
 function settotalscore() {
     document.getElementById("win0").innerHTML = "0: " + win0;
     document.getElementById("winx").innerHTML = "X: " + winX;
 }
 
-// Function to reset total scores and history
+// reset history and scores
 function resetscore() {
     winX = 0;
     win0 = 0;
